@@ -1,4 +1,6 @@
-build
+build/*
 bibliography
 
 **/.DS_Store
+
+!**/build/*.pdf
