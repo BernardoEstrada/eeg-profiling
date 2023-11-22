@@ -1,0 +1,70 @@
+{
+  "params": {
+    "batch_size": 3,
+    "cell_count": 6,
+    "num_layers": 1,
+    "input_size": 1080,
+    "hidden_size": 100,
+    "num_classes": 10,
+    "num_epochs": 200,
+    "learning_rate": 0.1,
+    "max_learning_rate": 0.1,
+    "div_factor": 25,
+    "final_div_factor": 10000.0,
+    "pct_start": 0.3,
+    "optimizer": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "amsgrad": false,
+      "foreach": null,
+      "maximize": false,
+      "capturable": false,
+      "differentiable": false,
+      "fused": null
+    },
+    "gru": {
+      "bias": true,
+      "bidirectional": false,
+      "dropout": 0
+    }
+  },
+  "results": {
+    "train_start": "2023-11-10T18:46",
+    "train_end": "2023-11-10T18:51",
+    "train_duration": "0:05:25.814098",
+    "filename": "2023-11-10T18:46",
+    "loss": {
+      "min": 1.0056548186639584e-11,
+      "max": 22.53731087786822,
+      "avg": 2.010616462247428,
+      "final": 0.44874464900461236
+    },
+    "accuracy": 0.4763095238095238,
+    "last_epoch_accuracy": 0.7780952380952381,
+    "test_accuracy": 0.5186666666666667,
+    "channel_selection": [
+      3,
+      4,
+      5,
+      10,
+      11,
+      12,
+      17,
+      18,
+      19
+    ],
+    "channel_count": 9,
+    "train_data": {
+      "subjects": 10,
+      "events": 105
+    },
+    "test_data": {
+      "subjects": 10,
+      "events": 75
+    }
+  }
+}
