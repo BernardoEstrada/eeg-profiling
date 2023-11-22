@@ -1,0 +1,95 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+\documentclass[letterpaper, 10 pt, conference]{assets/tex/ieeeconf}  % Comment this line out
+                                                          % if you need a4paper
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4
+                                                          % paper
+\usepackage[utf8]{inputenc}  % Ng Edit for accents in spanish
+\usepackage[english]{babel}  % Ng Edit for accents in spanish
+\usepackage{hyperref}        % Ng Edit for adding urls
+\usepackage{graphicx}        % Ng Edit for adding graphics
+\IEEEoverridecommandlockouts                              % This command is only
+                                                          % needed if you want to
+                                                          % use the \thanks command
+\overrideIEEEmargins
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+\def\equationautorefname~#1\null{(#1)\null}%to use parenthesis in eqs.
+
+
+% The following packages can be found on http:\\www.ctan.org
+%\usepackage{graphics} % for pdf, bitmapped graphics files
+%\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+%\usepackage{amsmath} % assumes amsmath package installed
+%\usepackage{amssymb}  % assumes amsmath package installed
+
+\title{\LARGE \bf
+Individual Classification through Convolutional Neural Networks: Leveraging EEG Signals for Accurate Profiling
+}
+
+
+\author{Bernardo Estrada, % <-this % stops a space
+\thanks{$^{1}$Departamento de  Computación y Mecatrónica,  Tecnológico de Monterrey Campus Querétaro, Epigmenio Gonzalez \#500 76130 Querétaro, México.
+% \newline Asesores: Arturo Pérez, Alfonso Gómez, Pedro Pérez.
+\newline {\tt\small a01704320@itesm.mx}}%
+}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background}
+In recent years, the exploration of brainwave patterns has gained substantial traction across diverse fields. This surge in interest stems from the growing demand for sophisticated analytics across applications, including epilepsy detection, neuro-prosthetic interfaces, and even neural image reconstruction\cite{Paper:Classification_of_Brainwaves_Using_Convolutional_Neural_Network}.
+
+Brainwaves, categorized by oscillation frequencies, hold promise as indicators of physical and emotional states. However, extracting prevalent brainwave types using multi-electrode setups is a challenge due to low signal-to-noise ratios (SNRs). Linear methods like FFT struggle with noisy signals\cite{Paper:Classification_of_Brainwaves_Using_Convolutional_Neural_Network}, prompting the need for non-linear techniques. Conventional neural networks require extracted features for optimal functioning. Current efforts emphasize feature extraction methods like Wavelet Transform and Power Spectral Density, but these may introduce bias\cite{Paper:Classification_of_Brainwaves_Using_Convolutional_Neural_Network}.
+
+Enter the Convolutional Neural Network (CNN), renowned for its success in computer vision. CNNs excel at capturing complex spatiotemporal patterns resilient to distortions, making them ideal for low SNR data. Our study adopts a CNN architecture inspired by Oxford's VGG, tailored for brainwave classification. Integrating time and frequency domains enhances noise resilience. Experiments on synthesized data with varying noise levels showcase CNN superiority over the FFT method.
+
+
+\section{Problem Statement}
+The analysis of brainwave patterns has gained momentum in various disciplines due to their potential to reveal insights into cognitive and emotional states\cite{Proceedings:Age_and_Gender_Classification_Using_EEG_Paralinguistic_Features}. However, these patterns are often obscured by noise, posing a significant challenge for accurate interpretation and classification\cite{Proceedings:Deep_Learning_for_EEG-Based_Preference_Classification}. Also, these patterns are mostly used to identify actions or discrepancies happening in the brain\cite{Proceedings:Gender_Clasification_Based_on_Single_Channel_EEG_Signal}, not for profiling or classifying individuals or used as a biometric parameter.
+
+\section{Justification}
+Harnessing brainwave patterns for individual identification offers a novel and secure biometric solution with applications ranging from authentication systems to personalized medical interventions\cite{Proceedings:EEG_biometric_identification:_a_thorough_exploration_of_the_time-frequency_domain}. Traditional linear methods, though effective in controlled environments, struggle with real-world noise, hindering their practicality\cite{Proceedings:Gender_Clasification_Based_on_Single_Channel_EEG_Signal}. Convolutional Neural Networks (CNNs) offer a promising avenue to overcome these challenges, but their performance in extracting individual-specific features from noisy brainwave data requires in-depth exploration\cite{Proceedings:Deep_Learning_for_EEG-Based_Preference_Classification}.
+
+\section{Expected Contributions}
+This study aims to continue and extend the advancements in brainwave-based individual identification by leveraging the capabilities of CNNs in noisy scenarios. The anticipated contributions encompass:
+\begin{enumerate}
+\item CNN-based Individual Profiling: Devising an optimized CNN architecture tailored to capturing unique brainwave features that distinguish individuals, even amidst noise.
+\item Noise Resilience Assessment: Investigating the CNN's resilience against varying noise levels, shedding light on its ability to maintain accuracy in real-world, less-controlled settings.
+\item Comparative Analysis with Conventional Methods: Contrasting the CNN's performance with conventional methods like Fast Fourier Transform (FFT) for individual identification, focusing on accuracy and noise tolerance.
+\item Improvement when working with other methods: Adding different existing methods, such as FFT, to improve reliability and capabilities of the CNN.
+\end{enumerate}
+
+\section{Methodology}
+\begin{enumerate}
+\item \textbf{Data Collection and Preprocessing}: Finding a collection of datasets of brainwave recordings spanning multiple individuals and curating them into usable, standardized data.
+\item \textbf{CNN Architecture Design}: Developing a CNN model optimized for individual identification from noisy brainwave data, incorporating temporal and spectral information.
+\item \textbf{Training and Validation}: Training the CNN on the prepared dataset, fine-tuning hyperparameters to maximize the model's capability to differentiate individuals.
+\item \textbf{Noise Impact Evaluation}: Systematically introducing noise to the dataset or switch to a noisier dataset at various levels to examine the CNN's capacity to maintain accuracy across different noise scenarios.
+\item \textbf{Comparison with FFT}: Implementing the FFT method for individual identification as a baseline, comparing its performance against the CNN in terms of accuracy and noise tolerance.
+\item \textbf{Performance Metrics}: Utilizing metrics like True Positive Rate, False Positive Rate, Receiver Operating Characteristic (ROC) curve, and Area Under the Curve (AUC) to quantify and compare the CNN's and FFT's performance.
+\item \textbf{Feature Interpretability Analysis}: Investigating the interpretability of features extracted by the CNN to understand the neural characteristics it identifies for individual differentiation.
+\item \textbf{Extend functionality to work with other methods}: Implement additional layers where other methods like FFT are used and verify if this improves accuracy.
+\end{enumerate}
+Through a short analysis, this research seeks to advance the feasibility of utilizing brainwave patterns as an individual biometric, offering insights into the CNN's capacity to robustly extract and utilize noise-resistant features for accurate identification. Ultimately, the study aims to contribute to the development of secure and reliable biometric solutions in practical applications.
+
+% \begin{bibliography}{99}
+\bibliography{savedrecs} 
+\bibliographystyle{ieeetr}
+
+% \end{bibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

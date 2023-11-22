@@ -1,5 +1,8 @@
-**/build
 dataset*
+transformed_data*
+.venv
 
 **/.DS_Store
 
+build/*
+!build/*.pdf
